@@ -47,6 +47,11 @@ jobs:
           echo ::set-output name=docker_platform::${DOCKER_TARGET_PLATFORM}
           echo "::set-output name=tag::$(git describe --tags --abbrev=0)"
 
+      - name: Set up vars
+        run: |
+          ACTOR="$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')"
+          echo "GITHUB_ACTOR=${ACTOR}" >> $GITHUB_ENV
+
 
       # - name: Login to Quay Container Registry
       #   uses: docker/login-action@v2
@@ -63,4 +68,4 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
-            ghcr.io/${{ github.actor }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
+            ghcr.io/${{ GITHUB_ACTOR }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
