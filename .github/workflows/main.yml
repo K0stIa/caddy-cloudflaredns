@@ -64,8 +64,3 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
             ghcr.io/${{ github.actor }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
-
-# ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_CONTAINER_NAME }}:${{ steps.prepare.outputs.tag }}        
-# ghcr.io/${{ github.actor }}/${{ env.DOCKER_CONTAINER_NAME }}:${{ steps.prepare.outputs.tag }}
-# quay.io/${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_CONTAINER_NAME }}:${{ steps.prepare.outputs.tag }}
-# quay.io/${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
