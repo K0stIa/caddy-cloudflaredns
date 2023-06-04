@@ -49,8 +49,8 @@ jobs:
 
       - name: Set up vars
         run: |
-          REPO="$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')"
-          echo "GITHUB_ACTOR=${REPO}:${{ github.sha }}" >> $GITHUB_ENV
+          ACTOR="$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')"
+          echo "GITHUB_ACTOR=${ACTOR}" >> $GITHUB_ENV
 
 
       # - name: Login to Quay Container Registry
