@@ -68,4 +68,3 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
-            ghcr.io/${{ env.GITHUB_ACTOR }}/${{ env.DOCKER_CONTAINER_NAME }}:latest
